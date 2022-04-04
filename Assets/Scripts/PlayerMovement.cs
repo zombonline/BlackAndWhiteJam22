@@ -14,12 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     private MenuHandle pauseMenu;
 
-    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
-    public Sprite upMove;
-    public Sprite downMove;
-    public Sprite rightMove;
-    public Sprite leftMove;
+    private const string WALK_RIGHT = "WalkRight";
+    private const string WALK_LEFT = "WalkLeft";
+    private const string WALK_UP = "WalkUp";
+    private const string WALK_DOWN = "WalkDown";
 
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         fov = GameObject.FindGameObjectWithTag("FOV").GetComponent<PlayerFOV>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         pauseMenu = GameObject.FindGameObjectWithTag("Pause").GetComponent<MenuHandle>();
         pauseMenu.ClosePauseMenu();
 
@@ -57,52 +57,58 @@ public class PlayerMovement : MonoBehaviour
 
         if(Time.timeScale > 0)
         {
+
             fov.SetOrigin(transform.position);
 
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        //check controls options
-        if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
-        {
-            lookInput.x = Input.GetAxisRaw("Look_Horizontal");
-            lookInput.y = Input.GetAxisRaw("Look_Vertical");
+            //check controls options
+            if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
+            {
+                lookInput.x = Input.GetAxisRaw("Look_Horizontal");
+                lookInput.y = Input.GetAxisRaw("Look_Vertical");
 
-            if (lookInput != Vector2.zero)
-            {
-                lastLook = lookInput;
+                if (lookInput != Vector2.zero)
+                {
+                    lastLook = lookInput;
+                }
             }
-        }
-        else
-        {
-            lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - transform.position;
-        }
+            else
+            {
+                lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - transform.position;
+            }
+            animator.enabled = true;
+            if (movement.y != 0)
+            {
+                if (movement.y > 0) // moving up
+                {
+                    animator.Play(WALK_UP);
 
-        if (movement.y != 0)
-        {
-            if (movement.y > 0) // moving up
-            {
-                spriteRenderer.sprite = upMove;
-                
+                }
+                else //moving down
+                {
+                    animator.Play(WALK_DOWN);
+                }
+
             }
-            else //moving down
+            else if (movement.x != 0)
             {
-                spriteRenderer.sprite = downMove;
+                if (movement.x > 0) // moving right
+                {
+                    animator.Play(WALK_RIGHT);
+                }
+                else //moving left
+                {
+                    animator.Play(WALK_LEFT);
+                }
+            }
+            else
+            {
+                animator.enabled = false;
             }
 
-        }else if (movement.x != 0)
-        {
-            if (movement.x > 0) // moving right
-            {
-                spriteRenderer.sprite = rightMove;
-            }
-            else //moving left
-            {
-                spriteRenderer.sprite = leftMove;
-            }
-        }
-
-        fov.SetFOVDirection(lastLook);
+            fov.SetFOVDirection(lastLook);
         }
     }
 

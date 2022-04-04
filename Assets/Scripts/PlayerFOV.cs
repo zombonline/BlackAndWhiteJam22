@@ -14,7 +14,7 @@ public class PlayerFOV : MonoBehaviour
     private Vector3 origin = Vector3.zero;
 
     private float edgeDistanceThreshold = 0.5f;
-    private int edgeResolveIterations = 20;
+    private int edgeResolveIterations = 10;
 
     [SerializeField]
     private LayerMask mask;
@@ -33,7 +33,7 @@ public class PlayerFOV : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int rayCount = 40;
+        int rayCount = 60;
 
         float currAngle = startingAngle;
 
