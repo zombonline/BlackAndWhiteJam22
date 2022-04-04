@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerFOV fov;
 
+    private MenuHandle pauseMenu;
+
     private SpriteRenderer spriteRenderer;
 
     public Sprite upMove;
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         fov = GameObject.FindGameObjectWithTag("FOV").GetComponent<PlayerFOV>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        pauseMenu = GameObject.FindGameObjectWithTag("Pause").GetComponent<MenuHandle>();
+        pauseMenu.ClosePauseMenu();
 
         fov.SetOrigin(transform.position);
         fov.SetFOVDirection(Vector3.right);
@@ -39,7 +43,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fov.SetOrigin(transform.position);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale > 0f)
+            {
+                pauseMenu.OpenPauseMenu();
+            }
+            else
+            {
+                pauseMenu.ClosePauseMenu();
+            }
+        }
+
+        if(Time.timeScale > 0)
+        {
+            fov.SetOrigin(transform.position);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -85,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         fov.SetFOVDirection(lastLook);
+        }
     }
 
     private void FixedUpdate()
