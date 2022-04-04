@@ -10,12 +10,19 @@ public class Pickup : MonoBehaviour
     [SerializeField] bool increaseTime, increaseFov;
     [SerializeField] float increaseTimeAmount, increaseFovAmount;
 
+    private PlayerFOV fov;
+
+    private void Start()
+    {
+        fov = GameObject.FindGameObjectWithTag("FOV").GetComponent<PlayerFOV>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject.Find("Game Canvas").GetComponent<TextBox>().ShowText(textFile);
         if(increaseFov)
         {
-            //increase fov
+            fov.IncreaseViewDistance(increaseFovAmount);
         }
         if(increaseTime)
         {

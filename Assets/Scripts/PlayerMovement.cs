@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Vector2 lookInput;
+    private Vector2 lastLook;
 
     private PlayerFOV fov;
 
@@ -27,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
 
         fov.SetOrigin(transform.position);
         fov.SetFOVDirection(Vector3.right);
+
+        if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_AND_MOUSE_CONTROLS))
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
     }
 
     // Update is called once per frame
@@ -37,17 +44,32 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        //check controls options
+        if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
+        {
+            lookInput.x = Input.GetAxisRaw("Look_Horizontal");
+            lookInput.y = Input.GetAxisRaw("Look_Vertical");
+
+            if (lookInput != Vector2.zero)
+            {
+                lastLook = lookInput;
+            }
+        }
+        else
+        {
+            lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - transform.position;
+        }
+
         if (movement.y != 0)
         {
             if (movement.y > 0) // moving up
             {
                 spriteRenderer.sprite = upMove;
-                fov.SetFOVDirection(Vector3.up);
+                
             }
             else //moving down
             {
                 spriteRenderer.sprite = downMove;
-                fov.SetFOVDirection(Vector3.down);
             }
 
         }else if (movement.x != 0)
@@ -55,15 +77,14 @@ public class PlayerMovement : MonoBehaviour
             if (movement.x > 0) // moving right
             {
                 spriteRenderer.sprite = rightMove;
-                fov.SetFOVDirection(Vector3.right);
             }
             else //moving left
             {
                 spriteRenderer.sprite = leftMove;
-                fov.SetFOVDirection(Vector3.left);
             }
         }
 
+        fov.SetFOVDirection(lastLook);
     }
 
     private void FixedUpdate()

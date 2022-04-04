@@ -13,9 +13,9 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
-  - 
-  - 
+  - Hidden
+  - Mask
+  - FogOfWar
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FogOfWar
+    uniqueID: 3666863343
     locked: 0
