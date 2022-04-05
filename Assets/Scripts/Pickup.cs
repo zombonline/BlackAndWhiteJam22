@@ -10,20 +10,14 @@ public class Pickup : MonoBehaviour
     [SerializeField] bool increaseTime, increaseFov;
     [SerializeField] float increaseTimeAmount, increaseFovAmount;
 
-    private InversePickup inversePickup;
 
     private PlayerFOV fov;
 
     private void Start()
     {
         fov = GameObject.FindGameObjectWithTag("FOV").GetComponent<PlayerFOV>();
-        inversePickup = GetComponentInChildren<InversePickup>();
     }
 
-    public void RevealInverse()
-    {
-        inversePickup.Spotted();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,8 +31,8 @@ public class Pickup : MonoBehaviour
             FindObjectOfType<Clock>().IncreaseTimeRemaining(increaseTimeAmount);
         }
 
-        Destroy(gameObject);
-    }
+        GetComponent<EraseTile>().Erase();
 
+    }
    
 }

@@ -135,14 +135,14 @@ public class PlayerFOV : MonoBehaviour
 
     private void CheckForItem(Vector3 dir)
     {
-        RaycastHit2D pickupHit = Physics2D.Raycast(origin, dir, viewDistance, pickupMask);
+        RaycastHit2D keyTileHit = Physics2D.Raycast(origin, dir, viewDistance, pickupMask);
 
-        if (pickupHit)
+        if (keyTileHit)
         {
-            Pickup pickupCheck =  pickupHit.collider.gameObject.GetComponent<Pickup>();
-            if (pickupCheck != null)
+            KeyTileInverse check =  keyTileHit.collider.gameObject.GetComponentInChildren<KeyTileInverse>();
+            if (check != null)
             {
-                pickupCheck.RevealInverse();
+                check.Spotted();
             }
         }
     }

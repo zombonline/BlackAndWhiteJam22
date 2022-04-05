@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FOV
   - Pause
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,11 @@ public class Clock : MonoBehaviour
     [SerializeField] Image unlockedTimeImage, clockArmImage;
 
     [SerializeField] Sprite[] clockTimes;
+    [SerializeField] Image warningImage;
     private Image clockImage;
+
+    private int currIndex;
+    private bool isWarning = false;
 
     private PlayerMovement playerMove;
     private void Awake()
@@ -20,6 +24,8 @@ public class Clock : MonoBehaviour
         //timeRemaining = unlockedTime;
         playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         clockImage = GetComponent<Image>();
+
+        warningImage.color = new Color(1, 1, 1, 0);
 
     }
     private void Update()
@@ -31,13 +37,23 @@ public class Clock : MonoBehaviour
         if (timeRemaining <= 0)
         {
            playerMove.IsDefeated();
+            ToggleWarning(false);
             clockImage.sprite = clockTimes[clockTimes.Length - 1];
         }
         else //calculate new index
         {
-            int currIndex = Mathf.CeilToInt(timeRemaining / maxTime * clockTimes.Length - 1);
+            currIndex = Mathf.CeilToInt(timeRemaining / maxTime * clockTimes.Length - 1);
             clockImage.sprite = clockTimes[currIndex];
+
+            isWarning = currIndex == 0 ? true : false;
+            ToggleWarning(isWarning);
         }
+
+        if (isWarning)
+        {
+            warningImage.rectTransform.Rotate(new Vector3(0, 0, 1), 300 * Time.deltaTime);
+        }
+
         //update time remaining
         timeRemaining -= Time.deltaTime;
     }
@@ -48,6 +64,19 @@ public class Clock : MonoBehaviour
         if(unlockedTime > maxTime)
         {
             unlockedTime = maxTime;
+        }
+    }
+
+    private void ToggleWarning(bool tog)
+    {
+        if (tog)
+        {
+            warningImage.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            warningImage.transform.rotation = Quaternion.Euler(Vector3.zero);
+            warningImage.color = new Color(1, 1, 1, 0);
         }
     }
 

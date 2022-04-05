@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: Bonus10RuleTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 0}
+  m_DefaultSprite: {fileID: 7882259149347836010, guid: e369ce44ce8ab734ca21d25f60c2f06c,
+    type: 3}
   m_DefaultGameObject: {fileID: 1609845737687007510, guid: 54bc6c49dff9d8f4abd7a2382f00649a,
     type: 3}
   m_DefaultColliderType: 1

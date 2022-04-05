@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InversePickup : MonoBehaviour
+public class KeyTileInverse : MonoBehaviour
 {
     private float currAlpha = 0;
     private float fadeMultiplier = 0.5f;
