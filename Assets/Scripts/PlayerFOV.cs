@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class PlayerFOV : MonoBehaviour
 
     [SerializeField]
     private LayerMask mask;
+    [SerializeField]
+    private LayerMask pickupMask;
     [SerializeField]
     private bool seeThroughWalls;
 
@@ -109,6 +112,8 @@ public class PlayerFOV : MonoBehaviour
         Vector3 dir = GetVectorFromAngle(globalAngle);
         RaycastHit2D hit = Physics2D.Raycast(origin, dir, viewDistance, mask);
 
+        CheckForItem(dir);
+
         if (hit)
         {
             if (seeThroughWalls)
@@ -125,6 +130,20 @@ public class PlayerFOV : MonoBehaviour
         else
         {
             return new ViewCastInfo(false, origin + dir * viewDistance, viewDistance, globalAngle);
+        }
+    }
+
+    private void CheckForItem(Vector3 dir)
+    {
+        RaycastHit2D pickupHit = Physics2D.Raycast(origin, dir, viewDistance, pickupMask);
+
+        if (pickupHit)
+        {
+            Pickup pickupCheck =  pickupHit.collider.gameObject.GetComponent<Pickup>();
+            if (pickupCheck != null)
+            {
+                pickupCheck.RevealInverse();
+            }
         }
     }
 

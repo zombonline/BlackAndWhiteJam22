@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 7918678a6e4f84a4b8a84bff34e5e67a
+guid: 53dd3525f2077d048906cabb43abaccd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4617963626870131607
-    second: brick wall black on white_0
+      213: -7186725236481664733
+    second: brick_wall_black_on_white_0
   - first:
-      213: -5600575631388859061
-    second: brick wall black on white_1
+      213: -2598440895718329079
+    second: brick_wall_black_on_white_1
   - first:
-      213: 287536091816682133
-    second: brick wall black on white_2
+      213: 933625956881741722
+    second: brick_wall_black_on_white_2
   - first:
-      213: -2247756391235745181
-    second: brick wall black on white_3
+      213: 3070443178160864122
+    second: brick_wall_black_on_white_3
   - first:
-      213: -7498388333331492844
-    second: brick wall black on white_4
+      213: 3412044366674453460
+    second: brick_wall_black_on_white_4
   - first:
-      213: -8375508488065492970
-    second: brick wall black on white_5
+      213: -8125469110486872073
+    second: brick_wall_black_on_white_5
   - first:
-      213: -7237541955050972909
-    second: brick wall black on white_6
+      213: 5603912067355669941
+    second: brick_wall_black_on_white_6
   - first:
-      213: -9032832613116405584
-    second: brick wall black on white_7
+      213: 5956815836629762837
+    second: brick_wall_black_on_white_7
   - first:
-      213: 3026930085906907108
-    second: brick wall black on white_8
+      213: 7617815074511655532
+    second: brick_wall_black_on_white_8
   - first:
-      213: 4783986311823760183
-    second: brick wall black on white_9
+      213: 8830430378827955815
+    second: brick_wall_black_on_white_9
   - first:
-      213: -7655142880650945670
-    second: brick wall black on white_10
+      213: -4852615893932510704
+    second: brick_wall_black_on_white_10
   - first:
-      213: -8058618048269716360
-    second: brick wall black on white_11
+      213: 3719849898307759330
+    second: brick_wall_black_on_white_11
   - first:
-      213: 4101098833963548890
-    second: brick wall black on white_12
+      213: -8052417587545163572
+    second: brick_wall_black_on_white_12
   - first:
-      213: 8749209275455619294
-    second: brick wall black on white_13
+      213: 3646714137768818276
+    second: brick_wall_black_on_white_13
   - first:
-      213: 1103307656810446575
-    second: brick wall black on white_14
+      213: 6739102207749473563
+    second: brick_wall_black_on_white_14
   - first:
-      213: 5099274423069308162
-    second: brick wall black on white_15
+      213: -1390385216444472066
+    second: brick_wall_black_on_white_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,19 +128,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,7 +140,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -163,7 +151,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brick wall black on white_0
+      name: brick_wall_black_on_white_0
       rect:
         serializedVersion: 2
         x: 0
@@ -177,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79bc44d937d461040800000000000000
-      internalID: 4617963626870131607
+      spriteID: 329dc2d697f934c90800000000000000
+      internalID: -7186725236481664733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_1
+      name: brick_wall_black_on_white_1
       rect:
         serializedVersion: 2
         x: 32
@@ -198,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b45ab59e222c642b0800000000000000
-      internalID: -5600575631388859061
+      spriteID: 9057cd0c5cb70fbd0800000000000000
+      internalID: -2598440895718329079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_2
+      name: brick_wall_black_on_white_2
       rect:
         serializedVersion: 2
         x: 64
@@ -219,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59266d45d888df300800000000000000
-      internalID: 287536091816682133
+      spriteID: a9735097cd7e4fc00800000000000000
+      internalID: 933625956881741722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_3
+      name: brick_wall_black_on_white_3
       rect:
         serializedVersion: 2
         x: 96
@@ -240,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a87c6a87d5ec0e0800000000000000
-      internalID: -2247756391235745181
+      spriteID: a7bbc497dc76c9a20800000000000000
+      internalID: 3070443178160864122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_4
+      name: brick_wall_black_on_white_4
       rect:
         serializedVersion: 2
         x: 0
@@ -261,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 410d7dbf98f50f790800000000000000
-      internalID: -7498388333331492844
+      spriteID: 4d3e08116440a5f20800000000000000
+      internalID: 3412044366674453460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_5
+      name: brick_wall_black_on_white_5
       rect:
         serializedVersion: 2
         x: 32
@@ -282,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 618569bc76734cb80800000000000000
-      internalID: -8375508488065492970
+      spriteID: 7ff450405e88c3f80800000000000000
+      internalID: -8125469110486872073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_6
+      name: brick_wall_black_on_white_6
       rect:
         serializedVersion: 2
         x: 64
@@ -303,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 319533220f51f8b90800000000000000
-      internalID: -7237541955050972909
+      spriteID: 5b5724f955815cd40800000000000000
+      internalID: 5603912067355669941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_7
+      name: brick_wall_black_on_white_7
       rect:
         serializedVersion: 2
         x: 96
@@ -324,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b812aba89ee4a280800000000000000
-      internalID: -9032832613116405584
+      spriteID: 5130dbe517cdaa250800000000000000
+      internalID: 5956815836629762837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_8
+      name: brick_wall_black_on_white_8
       rect:
         serializedVersion: 2
         x: 0
@@ -345,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ef7c6230e0d10a20800000000000000
-      internalID: 3026930085906907108
+      spriteID: c6212e8037ae7b960800000000000000
+      internalID: 7617815074511655532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_9
+      name: brick_wall_black_on_white_9
       rect:
         serializedVersion: 2
         x: 32
@@ -366,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73b16963432246240800000000000000
-      internalID: 4783986311823760183
+      spriteID: 76ebbd7d4adfb8a70800000000000000
+      internalID: 8830430378827955815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_10
+      name: brick_wall_black_on_white_10
       rect:
         serializedVersion: 2
         x: 64
@@ -387,14 +375,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7b90f5db1873c590800000000000000
-      internalID: -7655142880650945670
+      spriteID: 012fcb20e8b08acb0800000000000000
+      internalID: -4852615893932510704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_11
+      name: brick_wall_black_on_white_11
       rect:
         serializedVersion: 2
         x: 96
@@ -408,14 +396,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 874f45cd4990a2090800000000000000
-      internalID: -8058618048269716360
+      spriteID: 2ec286e16cf8f9330800000000000000
+      internalID: 3719849898307759330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_12
+      name: brick_wall_black_on_white_12
       rect:
         serializedVersion: 2
         x: 0
@@ -429,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad08a2339a70ae830800000000000000
-      internalID: 4101098833963548890
+      spriteID: cc8334f1ed0104090800000000000000
+      internalID: -8052417587545163572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_13
+      name: brick_wall_black_on_white_13
       rect:
         serializedVersion: 2
         x: 32
@@ -450,14 +438,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed0c5111b7f6b6970800000000000000
-      internalID: 8749209275455619294
+      spriteID: 466fa1bef2bbb9230800000000000000
+      internalID: 3646714137768818276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_14
+      name: brick_wall_black_on_white_14
       rect:
         serializedVersion: 2
         x: 64
@@ -471,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feeb722e77cbf4f00800000000000000
-      internalID: 1103307656810446575
+      spriteID: b1545fda0c9168d50800000000000000
+      internalID: 6739102207749473563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brick wall black on white_15
+      name: brick_wall_black_on_white_15
       rect:
         serializedVersion: 2
         x: 96
@@ -492,8 +480,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 205f747121344c640800000000000000
-      internalID: 5099274423069308162
+      spriteID: ef46fd0230c54bce0800000000000000
+      internalID: -1390385216444472066
       vertices: []
       indices: 
       edges: []
