@@ -34,7 +34,7 @@ public class Pickup : MonoBehaviour
         }
         if(increaseTime)
         {
-            FindObjectOfType<Clock>().IncreaseUnlockedTime(increaseTimeAmount);
+            FindObjectOfType<Clock>().IncreaseTimeRemaining(increaseTimeAmount);
         }
 
         Destroy(gameObject);
