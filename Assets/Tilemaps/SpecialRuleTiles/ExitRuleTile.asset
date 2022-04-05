@@ -19,7 +19,7 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 1392847582689206697, guid: 435fe1e6c3018be4c915a599f90a141d, type: 3}
+    - {fileID: -3879808836915657664, guid: fe227370171320943a3396d58f3785ef, type: 3}
     m_GameObject: {fileID: 5867895428110064092, guid: 548129909e3010f4e99499b3cd585e97,
       type: 3}
     m_MinAnimationSpeed: 1
@@ -28,7 +28,6 @@ MonoBehaviour:
     m_Output: 0
     m_ColliderType: 1
     m_RandomTransform: 0
-    m_Neighbors: 02000000
-    m_NeighborPositions:
-    - {x: -1, y: 0, z: 0}
+    m_Neighbors: 
+    m_NeighborPositions: []
     m_RuleTransform: 0

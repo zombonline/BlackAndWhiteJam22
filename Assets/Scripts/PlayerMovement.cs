@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private MenuHandle pauseMenu;
 
     private Animator animator;
-
+    private bool defeated;
     private const string WALK_RIGHT = "WalkRight";
     private const string WALK_LEFT = "WalkLeft";
     private const string WALK_UP = "WalkUp";
     private const string WALK_DOWN = "WalkDown";
+    private const string DEFEAT = "Defeat";
 
 
     // Start is called before the first frame update
@@ -55,13 +57,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Time.timeScale > 0)
+        if (defeated)
+        {
+            
+        }
+        else if(Time.timeScale > 0)
         {
 
             fov.SetOrigin(transform.position);
 
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
+            movement = movement.normalized;
 
             //check controls options
             if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
@@ -110,6 +117,22 @@ public class PlayerMovement : MonoBehaviour
 
             fov.SetFOVDirection(lastLook);
         }
+    }
+
+    public void IsDefeated()
+    {
+        animator.enabled = true;
+        defeated = true;
+        movement = Vector2.zero;
+        fov.gameObject.SetActive(false);
+        animator.Play(DEFEAT);
+        Invoke("Restart", 2f);
+    }
+
+    private void Restart()
+    {
+        
+        SceneManager.LoadScene("GameScene");
     }
 
     private void FixedUpdate()

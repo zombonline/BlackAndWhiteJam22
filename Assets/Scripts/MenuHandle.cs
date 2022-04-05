@@ -23,7 +23,14 @@ public class MenuHandle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Menu();
+        if (!CompareTag("Pause"))
+        {
+            Menu();
+        }
+        else
+        {
+            ClosePauseMenu();
+        }
         SetupOptions();
     }
 
