@@ -6,11 +6,15 @@ public class DoorHandle : MonoBehaviour
 {
     [SerializeField]
     private int id = 0;
+    private Animator animator;
+    private BoxCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        collider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
 
     public int GetID()
@@ -20,6 +24,7 @@ public class DoorHandle : MonoBehaviour
 
     public void OpenDoor()
     {
-        GetComponent<EraseTile>().Erase();
+        animator.enabled = true;
+        collider.enabled = false;
     }
 }

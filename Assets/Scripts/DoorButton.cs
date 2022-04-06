@@ -7,6 +7,13 @@ public class DoorButton : MonoBehaviour
     [SerializeField]
     private int id = 0;
     private DoorHandle[] pairedDoors;
+    [SerializeField]
+    private SpriteRenderer inverseRenderer;
+    [SerializeField]
+    private Sprite inversePressedSprite;
+
+    private Animator animator;
+    private bool pressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,16 +31,25 @@ public class DoorButton : MonoBehaviour
         }
 
         pairedDoors = doorList.ToArray();
+
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!pressed)
         {
-            OpenPairedDoors();
-        }
+            if (collision.CompareTag("Player"))
+            {
+                OpenPairedDoors();
+            }
 
-        GetComponent<EraseTile>().Erase();
+            animator.enabled = true;
+            pressed = true;
+            inverseRenderer.sprite = inversePressedSprite;
+        }
+        
     }
 
     private void OpenPairedDoors()
