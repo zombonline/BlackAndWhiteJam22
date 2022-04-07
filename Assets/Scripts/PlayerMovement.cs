@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private MenuHandle pauseMenu;
 
     private Animator animator;
-    private bool defeated;
+    private bool inputAllowed = true;
     private const string WALK_RIGHT = "WalkRight";
     private const string WALK_LEFT = "WalkLeft";
     private const string WALK_UP = "WalkUp";
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && inputAllowed)
         {
             if (Time.timeScale > 0f)
             {
@@ -57,11 +57,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (defeated)
-        {
-            
-        }
-        else if(Time.timeScale > 0)
+        if(inputAllowed && Time.timeScale > 0)
         {
 
             fov.SetOrigin(transform.position);
@@ -122,17 +118,22 @@ public class PlayerMovement : MonoBehaviour
     public void IsDefeated()
     {
         animator.enabled = true;
-        defeated = true;
+        inputAllowed = false;
         movement = Vector2.zero;
         fov.gameObject.SetActive(false);
         animator.Play(DEFEAT);
         Invoke("Restart", 2f);
     }
 
+    public void SetInputPermission(bool state)
+    {
+        inputAllowed = state;
+    }
+
     private void Restart()
     {
         
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void FixedUpdate()
