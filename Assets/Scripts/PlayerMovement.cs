@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check for pause input
         if (Input.GetKeyDown(KeyCode.Escape) && inputAllowed)
         {
             if (Time.timeScale > 0f)
@@ -55,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 pauseMenu.ClosePauseMenu();
             }
+        }
+
+        if (inputAllowed && Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
         }
 
         if(inputAllowed && Time.timeScale > 0)

@@ -122,6 +122,11 @@ public class MenuHandle : MonoBehaviour
         options.SetActive(false);
     }
 
+    public void OpenLevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelectScene");
+    }
+
     public void OpenMenuScene()
     {
         SceneManager.LoadScene("MainMenu");
@@ -156,6 +161,12 @@ public class MenuHandle : MonoBehaviour
         {
             mouseButton.interactable = false;
             keyboardButton.interactable = true;
+        }
+
+        //setting levels unlocked
+        if (PlayerPrefs.GetInt("LevelsUnlocked").Equals(0))
+        {
+            PlayerPrefs.SetInt("LevelsUnlocked", 1);
         }
     }
 }

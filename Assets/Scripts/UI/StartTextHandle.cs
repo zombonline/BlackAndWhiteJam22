@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StartTextHandle : MonoBehaviour
@@ -9,6 +10,10 @@ public class StartTextHandle : MonoBehaviour
     private void Start()
     {
         fov = GameObject.FindGameObjectWithTag("FOV").GetComponent<PlayerFOV>();
+        if (transform.localPosition.x > 10 && PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
+        {
+            GetComponent<TextMeshProUGUI>().text = "Arrow keys to look around";
+        }
     }
 
     // Update is called once per frame

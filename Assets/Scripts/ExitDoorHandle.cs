@@ -20,6 +20,12 @@ public class ExitDoorHandle : MonoBehaviour
             Time.timeScale = 0;
             endLevel.SetActive(true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().SetInputPermission(false);
+
+            //check for level unlock update
+            if (PlayerPrefs.GetInt("LevelsUnlocked") <= SceneManager.GetActiveScene().buildIndex)
+            {
+                PlayerPrefs.SetInt("LevelsUnlocked", SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }
