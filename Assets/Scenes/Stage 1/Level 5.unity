@@ -222,6 +222,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 11
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
+  - first: {x: 2, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 6
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: 8, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -460,6 +470,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: fa70a67ac88c6c744bce86e88566a655, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d6b4f045fccb27f4eac55f3737176e19, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 7f845c0ee8255d044b64befb03865b8d, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -473,8 +485,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -6642189541005656643, guid: a9b47c02da934714a922643efc6a89a0,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 7882259149347836010, guid: e369ce44ce8ab734ca21d25f60c2f06c,
       type: 3}
@@ -499,7 +512,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -96881012630931142, guid: 1c319e28eb0b83a4aa8dd8fa39c26a3b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 23
+  - m_RefCount: 24
     m_Data:
       e00: 1
       e01: 0
@@ -518,7 +531,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 23
+  - m_RefCount: 24
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
   - m_RefCount: 0
@@ -533,8 +546,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1609845737687007510, guid: da15f3f1110d1cb4583b482c56d51411,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1609845737687007510, guid: 54bc6c49dff9d8f4abd7a2382f00649a,
       type: 3}

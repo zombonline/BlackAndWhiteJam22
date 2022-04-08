@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
+    private enum PICKUP_TYPE { TIME_UP, FOV_UP }
+
     [SerializeField] TextAsset textFile;
-    [SerializeField] bool increaseTime, increaseFov;
-    [SerializeField] float increaseTimeAmount, increaseFovAmount;
+    [SerializeField] PICKUP_TYPE type;
+    [SerializeField] float increaseTimeAmount;
 
 
     private PlayerFOV fov;
@@ -21,12 +24,13 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(increaseFov)
+        if(type == PICKUP_TYPE.FOV_UP)
         {
             GameObject.Find("Game Canvas").GetComponent<TextBox>().ShowText(textFile);
-            fov.IncreaseViewDistance(increaseFovAmount);
+            PlayerPrefs.SetInt("Level" + SceneManager.GetActiveScene().buildIndex.ToString(), 1);
+            fov.UpdateFOVUpgrades(true);
         }
-        if(increaseTime)
+        if(type == PICKUP_TYPE.TIME_UP)
         {
             FindObjectOfType<Clock>().IncreaseTimeRemaining(increaseTimeAmount);
         }

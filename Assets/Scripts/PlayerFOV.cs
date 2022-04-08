@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerFOV : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class PlayerFOV : MonoBehaviour
 
     private float startingAngle;
     private float fov = 90;
-    private float viewDistance = 5f;
+    private float baseViewDistance = 5f;
+    private float viewDistance;
     private float wallVisonDistance = 0.5f;
     private Vector3 origin = Vector3.zero;
 
@@ -30,7 +32,6 @@ public class PlayerFOV : MonoBehaviour
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
-
     }
 
     // Update is called once per frame
@@ -205,9 +206,24 @@ public class PlayerFOV : MonoBehaviour
         return n;
     }
 
-    public void IncreaseViewDistance(float amount)
+    public void UpdateFOVUpgrades(bool justPickedUp)
     {
-        viewDistance += amount;
+        //checks for every vision unlock in previous levels
+        int upgradeCount = 0;
+        for (int i = 1; i < SceneManager.GetActiveScene().buildIndex + 1; i++)
+        {
+            if (PlayerPrefs.HasKey("Level" + i))
+            {
+                if (i < SceneManager.GetActiveScene().buildIndex || justPickedUp)
+                {
+                    upgradeCount++;
+                }
+                
+            }
+        }
+        viewDistance = baseViewDistance + (0.4f * upgradeCount);
+        //update peripheral fov too
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PeripheralFOV>().UpdateSize(upgradeCount);
     }
 
 

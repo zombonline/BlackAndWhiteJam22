@@ -7,14 +7,25 @@ public class DoorHandle : MonoBehaviour
     [SerializeField]
     private int id = 0;
     private Animator animator;
-    private BoxCollider2D collider;
+    private BoxCollider2D boxCollider;
+
+    [SerializeField]
+    private bool reversed;
 
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        animator.enabled = false;
+        if (!reversed)
+        {
+            animator.enabled = false;
+        }
+        else
+        {
+            boxCollider.enabled = false;
+        }
+        
     }
 
     public int GetID()
@@ -24,7 +35,15 @@ public class DoorHandle : MonoBehaviour
 
     public void OpenDoor()
     {
-        animator.enabled = true;
-        collider.enabled = false;
+        if (!reversed)
+        {
+            animator.enabled = true;
+            boxCollider.enabled = false;
+        }
+        else
+        {
+            boxCollider.enabled = true;
+        }
+        
     }
 }

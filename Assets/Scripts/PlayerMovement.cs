@@ -40,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
         }
+
+        fov.UpdateFOVUpgrades(false);
     }
 
     // Update is called once per frame

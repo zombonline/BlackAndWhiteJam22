@@ -50,6 +50,18 @@ TextureImporter:
   - first:
       213: 8352856364213412948
     second: player bo_15
+  - first:
+      213: -4865030690378470015
+    second: player bo_16
+  - first:
+      213: -4707735819706445983
+    second: player bo_17
+  - first:
+      213: -366118600880358196
+    second: player bo_18
+  - first:
+      213: -3882577112692496479
+    second: player bo_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -482,6 +494,90 @@ TextureImporter:
       bones: []
       spriteID: 4542dc0ab9e4be370800000000000000
       internalID: 8352856364213412948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player bo_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d2e96fc50fb7cb0800000000000000
+      internalID: -4865030690378470015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player bo_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fc302f633caaeb0800000000000000
+      internalID: -4707735819706445983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player bo_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccfcd082194beaf0800000000000000
+      internalID: -366118600880358196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player bo_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7e6e0dfa05e1ac0800000000000000
+      internalID: -3882577112692496479
       vertices: []
       indices: 
       edges: []

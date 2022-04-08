@@ -133,6 +133,12 @@ public class MenuHandle : MonoBehaviour
     }
 
 
+    public void ResetSave()
+    {
+        PlayerPrefs.DeleteAll();
+        SetupOptions();
+    }
+
     private void SetupOptions()
     {
         //check player prefs set
