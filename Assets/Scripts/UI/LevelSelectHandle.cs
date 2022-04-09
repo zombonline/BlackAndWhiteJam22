@@ -14,6 +14,9 @@ public class LevelSelectHandle : MonoBehaviour
     [SerializeField]
     private int[] levelsInStages = new int[5];
 
+    [SerializeField]
+    private GameObject[] worlds = new GameObject[5];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +27,12 @@ public class LevelSelectHandle : MonoBehaviour
             for (int j = 0; j < levelsInStages[i]; j++)
             {
                 Button currButton = Instantiate(levelButton);
-                currButton.transform.SetParent(this.transform);
+                currButton.transform.SetParent(worlds[i].transform);
                 currButton.transform.localScale = new Vector3(1, 1, 1);
                 currButton.GetComponent<LevelButtonId>().SetID(new LevelButtonId.LevelID(i + 1, j + 1));
 
                 //check if is unlocked
-                if (j + 1 > PlayerPrefs.GetInt("LevelsUnlocked"))
+                if ((i * 10) + (j + 1) > PlayerPrefs.GetInt("LevelsUnlocked"))
                 {
                     currButton.GetComponent<Image>().sprite = lockedSprite;
                     currButton.interactable = false;

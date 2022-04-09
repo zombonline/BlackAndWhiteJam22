@@ -97,7 +97,7 @@ MonoBehaviour:
   viewMeshFilter: {fileID: 3060988720878250831}
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5120
   pickupMask:
     serializedVersion: 2
     m_Bits: 128

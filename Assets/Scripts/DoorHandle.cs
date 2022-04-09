@@ -17,13 +17,13 @@ public class DoorHandle : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        if (!reversed)
+        animator.enabled = false;
+        if (reversed)
         {
-            animator.enabled = false;
-        }
-        else
-        {
+            animator.enabled = true;
             boxCollider.enabled = false;
+            //pause animation to prevent reverse delays
+            Invoke("PauseAnimation", 0.5f);
         }
         
     }
@@ -42,8 +42,16 @@ public class DoorHandle : MonoBehaviour
         }
         else
         {
+            animator.StartPlayback();
+            animator.speed = -1;
+            animator.enabled = true;
             boxCollider.enabled = true;
         }
         
+    }
+
+    private void PauseAnimation()
+    {
+        animator.enabled = false;
     }
 }

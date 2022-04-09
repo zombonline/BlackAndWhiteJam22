@@ -35,7 +35,7 @@ public class PlayerFOV : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         int rayCount = 60;
 
