@@ -88,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - transform.position;
+                // lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - transform.position;
+                lastLook = Camera.main.ScreenPointToRay(Input.mousePosition).origin - Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             }
             animator.enabled = true;
             if (movement.y != 0)
