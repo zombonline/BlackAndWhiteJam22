@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restet save
+  m_text: Reset save
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 048af649a2c995a47ae7973346c6037a, type: 2}
   m_sharedMaterial: {fileID: -893304176406085726, guid: 048af649a2c995a47ae7973346c6037a,
