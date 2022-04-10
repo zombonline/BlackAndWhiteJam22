@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Vector2 additionalMovement = Vector2.zero;
     private Vector2 lookInput;
     private Vector2 lastLook;
 
@@ -123,6 +124,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AddMovementForce(Vector2 newAdditionalMovement)
+    {
+        //only allow 1 new force per fixed update
+        if (additionalMovement == Vector2.zero && inputAllowed)
+        {
+            additionalMovement += newAdditionalMovement;
+        }
+        
+    }
+
     public void IsDefeated()
     {
         animator.enabled = true;
@@ -146,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        movement += additionalMovement;
         rb.MovePosition(rb.position + (movement * movementSpeed * Time.fixedDeltaTime));
+        additionalMovement = Vector2.zero;
     }
 }
