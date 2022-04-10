@@ -101,10 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: eae7cca8fe003f74b9e07eb37df5bdad, type: 3}
-  increaseTime: 1
-  increaseFov: 0
+  type: 0
   increaseTimeAmount: 1
-  increaseFovAmount: 0.75
+  collectableID: 0
 --- !u!61 &1609845737687007511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,7 +246,7 @@ SpriteRenderer:
   m_SortingLayerID: -628103953
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1732501242396596947, guid: e369ce44ce8ab734ca21d25f60c2f06c,
+  m_Sprite: {fileID: 2648775999834826305, guid: 9e31a94322c20864e85773f6a42a98cc,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

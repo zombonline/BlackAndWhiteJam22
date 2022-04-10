@@ -424,7 +424,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 14
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: 9, y: -13, z: 0}
+  - first: {x: 10, y: -13, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -824,6 +824,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f5e74d33592ff604dbc6c9a760475e0e, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 74278b552e976d240971cfe5ccf67abd, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -6792,7 +6794,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
     type: 3}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

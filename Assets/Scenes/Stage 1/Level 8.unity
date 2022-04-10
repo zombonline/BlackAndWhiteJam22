@@ -252,6 +252,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 12
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
+  - first: {x: -2, y: -7, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 8
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 5
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: 7, y: -7, z: 0}
     second:
       serializedVersion: 2
@@ -580,6 +590,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3cffaa2da28a7314d939c03c3d210c69, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f5e74d33592ff604dbc6c9a760475e0e, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 655eb970d7e3d5e47b4c141b1b38da26, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -591,8 +603,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: f7a1c7bedeccbe0498a6545c604de34d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8885366599884568565, guid: 5aa9747db800dcd42964699dca5ce2aa,
       type: 3}
@@ -616,7 +628,7 @@ Tilemap:
     m_Data: {fileID: -3879808836915657664, guid: fe227370171320943a3396d58f3785ef,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 35
+  - m_RefCount: 36
     m_Data:
       e00: 1
       e01: 0
@@ -635,7 +647,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 35
+  - m_RefCount: 36
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
   - m_RefCount: 0
@@ -648,8 +660,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1609845737687007510, guid: 35dc3012f95f08b4b8aa8b868f9076c1,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 4878652675511155848, guid: 5c77df2ea9c473d44bbac93c52faa719,
       type: 3}
@@ -4894,7 +4907,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
     type: 3}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

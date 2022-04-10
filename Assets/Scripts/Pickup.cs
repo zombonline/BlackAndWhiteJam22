@@ -13,6 +13,8 @@ public class Pickup : MonoBehaviour
     [SerializeField] PICKUP_TYPE type;
     [SerializeField] float increaseTimeAmount;
 
+    [SerializeField] private int collectableID = 0;
+
 
     private PlayerFOV fov;
 
