@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 additionalMovement = Vector2.zero;
     private Vector2 lookInput;
     private Vector2 lastLook;
+    private bool movementDebuff;
 
     private PlayerFOV fov;
 
@@ -74,6 +75,12 @@ public class PlayerMovement : MonoBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
             movement = movement.normalized;
+
+            //apply movement debuff
+            if (movementDebuff)
+            {
+                movement = Vector2.zero;
+            }
 
             //check controls options
             if (PlayerPrefs.GetString("Controls").Equals(MenuHandle.KEYBOARD_CONTROLS))
@@ -153,6 +160,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetInputPermission(bool state)
     {
         inputAllowed = state;
+    }
+
+    public void MovementDebuff(bool applied)
+    {
+        movementDebuff = applied;
     }
 
     private void Restart()

@@ -10,6 +10,8 @@ public class EndLevelHandle : MonoBehaviour
     private TextMeshProUGUI text;
     private int currLevel;
 
+    private bool trueEnding = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,15 @@ public class EndLevelHandle : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (trueEnding)
+        {
+            SceneManager.LoadScene("TrueEnding");
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
     }
 
     public void RestartLevel()
@@ -35,5 +45,10 @@ public class EndLevelHandle : MonoBehaviour
     public void PlayFinishSound()
     {
         GetComponent<AudioSource>().Play();
+    }
+
+    public void TrueEndingUnlocked()
+    {
+        trueEnding = true;
     }
 }

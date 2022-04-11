@@ -582,6 +582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSources: {fileID: 7829323602715887234, guid: af56d9d34be8b1941a278731736e2b79,
     type: 3}
+  backgroundMusicObject: {fileID: 6349983959477994790, guid: 066ba593c4520794aac833f5969dde18,
+    type: 3}
+  stageMusic: {fileID: 8300000, guid: 1430689e157dfc745af68a4612adfa47, type: 3}
 --- !u!1 &1890238732
 GameObject:
   m_ObjectHideFlags: 0

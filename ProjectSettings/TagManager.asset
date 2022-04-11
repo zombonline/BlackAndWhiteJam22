@@ -11,6 +11,7 @@ TagManager:
   - ButtonHover
   - MainClick
   - SecondaryClick
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX
