@@ -39,8 +39,12 @@ public class LevelButtonId : MonoBehaviour
         if (levelId.stage == 3)
         {
             levelId.level--;
+            text.text = levelId.stage + "-" + (levelId.level + 1);
         }
-        text.text = levelId.stage + "-" + (levelId.level + 1); // +1 temp fix to correct text
+        else
+        {
+            text.text = levelId.stage + "-" + (levelId.level);
+        }
     }
 
     
