@@ -122,6 +122,11 @@ public class MenuHandle : MonoBehaviour
         options.SetActive(false);
     }
 
+    public bool CheckMenusActive()
+    {
+        return menu.activeInHierarchy || options.activeInHierarchy;
+    }
+
     public void OpenLevelSelect()
     {
         SceneManager.LoadScene("LevelSelectScene");

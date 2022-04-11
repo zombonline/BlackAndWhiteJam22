@@ -8062,6 +8062,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7605715318101747320, guid: 864571eb069a8d844a4b03e8bbfd6ccd,
+        type: 3}
+      propertyPath: clockSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864571eb069a8d844a4b03e8bbfd6ccd, type: 3}
 --- !u!1001 &826890794351176155

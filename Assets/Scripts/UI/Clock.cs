@@ -18,6 +18,9 @@ public class Clock : MonoBehaviour
     private int currIndex;
     private bool isWarning = false;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip normalTicking, fastTicking;
+
     private PlayerMovement playerMove;
     private void Awake()
     {
@@ -27,16 +30,27 @@ public class Clock : MonoBehaviour
 
         warningImage.color = new Color(1, 1, 1, 0);
 
+        audioSource = GetComponent<AudioSource>();
+
     }
     private void Update()
     {
+        if (Time.timeScale < 1)
+        {
+            audioSource.Stop();
+        }
+        else if(!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
         /*unlockedTimeImage.fillAmount = unlockedTime / maxTime;
 
         clockArmImage.rectTransform.eulerAngles = new Vector3(0, 0, -((timeRemaining / maxTime) * 360));*/
 
         if (timeRemaining <= 0)
         {
-           playerMove.IsDefeated();
+            playerMove.IsDefeated();
+            audioSource.Stop();
             ToggleWarning(false);
             clockImage.sprite = clockTimes[clockTimes.Length - 1];
         }
@@ -71,10 +85,12 @@ public class Clock : MonoBehaviour
     {
         if (tog)
         {
+            audioSource.clip = fastTicking;
             warningImage.color = new Color(1, 1, 1, 1);
         }
         else
         {
+            audioSource.clip = normalTicking;
             warningImage.transform.rotation = Quaternion.Euler(Vector3.zero);
             warningImage.color = new Color(1, 1, 1, 0);
         }

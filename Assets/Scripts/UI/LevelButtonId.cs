@@ -10,6 +10,8 @@ public class LevelButtonId : MonoBehaviour
     [SerializeField]
     private Text text;
 
+    private AudioSource click, hover;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,9 @@ public class LevelButtonId : MonoBehaviour
         {
             SetID(new LevelID(1, 1));
         }
+
+        click = GameObject.FindGameObjectWithTag("MainClick").GetComponent<AudioSource>();
+        hover = GameObject.FindGameObjectWithTag("ButtonHover").GetComponent<AudioSource>();
     }
 
     public void LevelSelected()
@@ -31,6 +36,16 @@ public class LevelButtonId : MonoBehaviour
         text.text = levelId.stage + "-" + levelId.level;
     }
 
+    
+    public void ClickSound()
+    {
+        click.Play();
+    }
+
+    public void HoverSound()
+    {
+        hover.Play();
+    }
 
     public struct LevelID 
     {

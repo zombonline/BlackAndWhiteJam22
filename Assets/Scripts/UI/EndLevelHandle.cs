@@ -22,8 +22,18 @@ public class EndLevelHandle : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void PlayFinishSound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 }

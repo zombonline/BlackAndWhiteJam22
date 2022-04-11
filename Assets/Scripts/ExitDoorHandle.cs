@@ -19,6 +19,7 @@ public class ExitDoorHandle : MonoBehaviour
         {
             Time.timeScale = 0;
             endLevel.SetActive(true);
+            endLevel.GetComponent<EndLevelHandle>().PlayFinishSound();
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().SetInputPermission(false);
 
             //check for level unlock update

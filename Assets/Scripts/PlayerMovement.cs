@@ -137,12 +137,17 @@ public class PlayerMovement : MonoBehaviour
 
     public void IsDefeated()
     {
+        if (fov.gameObject.activeInHierarchy)
+        {
+            GetComponent<PlayerSound>().PlayDefeatSound();
+        }
+        
         animator.enabled = true;
         inputAllowed = false;
         movement = Vector2.zero;
         fov.gameObject.SetActive(false);
         animator.Play(DEFEAT);
-        Invoke("Restart", 2f);
+        Invoke("Restart", 3f);
     }
 
     public void SetInputPermission(bool state)

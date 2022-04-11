@@ -43,11 +43,15 @@ public class DoorButton : MonoBehaviour
             if (collision.CompareTag("Player"))
             {
                 OpenPairedDoors();
+                PlayerSound playerSound = collision.GetComponent<PlayerSound>();
+                playerSound.PlayButtonSound();
+
+                animator.enabled = true;
+                pressed = true;
+                inverseRenderer.sprite = inversePressedSprite;
             }
 
-            animator.enabled = true;
-            pressed = true;
-            inverseRenderer.sprite = inversePressedSprite;
+            
         }
         
     }

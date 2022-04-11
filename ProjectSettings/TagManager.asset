@@ -8,6 +8,9 @@ TagManager:
   - Pause
   - Door
   - LevelComplete
+  - ButtonHover
+  - MainClick
+  - SecondaryClick
   layers:
   - Default
   - TransparentFX

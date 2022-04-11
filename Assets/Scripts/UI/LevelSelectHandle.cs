@@ -20,9 +20,14 @@ public class LevelSelectHandle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadLevels();
+    }
+
+    private void LoadLevels()
+    {
         int numStages = levelsInStages.Length;
 
-        for(int i = 0; i < numStages; i++)
+        for (int i = 0; i < numStages; i++)
         {
             for (int j = 0; j < levelsInStages[i]; j++)
             {
@@ -39,6 +44,12 @@ public class LevelSelectHandle : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UnlockAll()
+    {
+        PlayerPrefs.SetInt("LevelsUnlocked", 100);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenu()

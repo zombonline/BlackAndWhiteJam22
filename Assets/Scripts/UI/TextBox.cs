@@ -10,11 +10,13 @@ public class TextBox : MonoBehaviour
     [SerializeField] TextMeshProUGUI textComponent;
     private PlayerMovement playerMovement;
 
+    private AudioSource audioSource;
     private bool typing, boxOpen, skipText;
 
     private void Start()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();   
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -44,6 +46,7 @@ public class TextBox : MonoBehaviour
     IEnumerator TypeWriterText(TextAsset textFile)
     {
         typing = true;
+        audioSource.Play();
         for (int i = 0; i <= textFile.text.Length; i++)
         {
             yield return new WaitForSecondsRealtime(0.01f);
@@ -55,12 +58,15 @@ public class TextBox : MonoBehaviour
                 break;
             }
         }
+        audioSource.Stop();
         typing = false;
         skipText = false;
     }
 
     public void OkButton()
     {
+        audioSource.Stop();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSound>().PlayVisionUpSound();
         textBox.gameObject.SetActive(false);
         textComponent.text = null;
         boxOpen = false;
