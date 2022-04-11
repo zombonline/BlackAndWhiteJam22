@@ -1012,6 +1012,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91512829478678093, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
+        type: 3}
+      propertyPath: stageMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 425c70fe268ec6a42850b48cd4cef997, type: 3}
     - target: {fileID: 2970594373569692370, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
         type: 3}
       propertyPath: m_AnchorMax.x

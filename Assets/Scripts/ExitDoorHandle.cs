@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 public class ExitDoorHandle : MonoBehaviour
 {
     private GameObject endLevel;
+    [SerializeField] GameObject parent;
 
     private void Start()
     {
         endLevel = GameObject.FindGameObjectWithTag("LevelComplete");
         endLevel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        parent.transform.Rotate(0,0,Time.deltaTime * 100);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,4 +35,5 @@ public class ExitDoorHandle : MonoBehaviour
             }
         }
     }
+
 }

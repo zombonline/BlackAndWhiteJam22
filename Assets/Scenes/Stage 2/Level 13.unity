@@ -252,6 +252,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 14
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
+  - first: {x: 10, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 14
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: 2, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -358,7 +368,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5cfe022f9072c4a43b74afc4f030f58b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f5e74d33592ff604dbc6c9a760475e0e, type: 2}
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 3cffaa2da28a7314d939c03c3d210c69, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -389,13 +399,13 @@ Tilemap:
     m_Data: {fileID: 6212316926236939558, guid: e369ce44ce8ab734ca21d25f60c2f06c,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 2137516850520035780, guid: dea0d7ad27fadfa4bada19534019536d,
+    m_Data: {fileID: 8737723855140250355, guid: 0c4a986d332ffa741bca6fd5f10d03ac,
       type: 3}
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {fileID: 1732501242396596947, guid: e369ce44ce8ab734ca21d25f60c2f06c,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 13
+  - m_RefCount: 14
     m_Data:
       e00: 1
       e01: 0
@@ -414,7 +424,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 13
+  - m_RefCount: 14
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray:
   - m_RefCount: 0
@@ -448,7 +458,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 5867895428110064092, guid: 548129909e3010f4e99499b3cd585e97,
       type: 3}
-  - m_RefCount: 10
+  - m_RefCount: 11
     m_Data: {fileID: 1609845737687007510, guid: 11961de4b213c3641beeb52ae3f7dd9e,
       type: 3}
   m_AnimationFrameRate: 1
@@ -1461,6 +1471,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91512829478678093, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
+        type: 3}
+      propertyPath: stageMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 425c70fe268ec6a42850b48cd4cef997, type: 3}
     - target: {fileID: 2970594373569692370, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
         type: 3}
       propertyPath: m_AnchorMax.x
