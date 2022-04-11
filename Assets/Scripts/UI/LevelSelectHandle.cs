@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -37,11 +38,19 @@ public class LevelSelectHandle : MonoBehaviour
                 currButton.GetComponent<LevelButtonId>().SetID(new LevelButtonId.LevelID(i + 1, j + 1));
 
                 //check if is unlocked
+                if (PlayerPrefs.HasKey("Level" + (j + 1)))
+                {
+                    var collectableText = currButton.transform.Find("Collectable").GetComponent<TextMeshProUGUI>();
+                    collectableText.enabled = true;
+                    collectableText.text = PlayerPrefs.GetInt("Level" + (j + 1)).ToString() + "/1";
+                }
+
                 if ((i * 10) + (j + 1) > PlayerPrefs.GetInt("LevelsUnlocked"))
                 {
                     currButton.GetComponent<Image>().sprite = lockedSprite;
                     currButton.interactable = false;
                 }
+                
             }
         }
     }
