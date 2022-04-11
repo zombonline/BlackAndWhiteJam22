@@ -7,7 +7,7 @@ public class AnswerBoxTrigger : MonoBehaviour
     [SerializeField]
     private GameObject answerInputUI;
 
-    private int[] correctAnswer = { 9, 5, 1, 5 };
+    private int[] correctAnswer = { 9, 2, 4, 9 };
     private PlayerMovement playerMovement;
     public bool trueEndingUnlocked = false;
 
