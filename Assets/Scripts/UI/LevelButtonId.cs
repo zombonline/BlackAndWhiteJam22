@@ -32,8 +32,15 @@ public class LevelButtonId : MonoBehaviour
 
     public void SetID(LevelID newID)
     {
+        
         levelId = newID;
-        text.text = levelId.stage + "-" + levelId.level;
+        //temp fix for stage 3 level select bug
+        //remove if level 20 is added
+        if (levelId.stage == 3)
+        {
+            levelId.level--;
+        }
+        text.text = levelId.stage + "-" + (levelId.level + 1); // +1 temp fix to correct text
     }
 
     

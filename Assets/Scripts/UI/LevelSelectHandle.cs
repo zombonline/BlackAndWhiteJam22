@@ -30,19 +30,22 @@ public class LevelSelectHandle : MonoBehaviour
 
         for (int i = 0; i < numStages; i++)
         {
+
             for (int j = 0; j < levelsInStages[i]; j++)
             {
+
                 Button currButton = Instantiate(levelButton);
                 currButton.transform.SetParent(worlds[i].transform);
                 currButton.transform.localScale = new Vector3(1, 1, 1);
                 currButton.GetComponent<LevelButtonId>().SetID(new LevelButtonId.LevelID(i + 1, j + 1));
 
                 //check if is unlocked
-                if (PlayerPrefs.HasKey("Level" + (j + 1)))
+                Debug.Log("Level " + ((i * 10) + (j + 1)));
+                if (PlayerPrefs.HasKey("Level " + ((i * 10) + (j + 1))))
                 {
                     var collectableText = currButton.transform.Find("Collectable").GetComponent<TextMeshProUGUI>();
                     collectableText.enabled = true;
-                    collectableText.text = PlayerPrefs.GetInt("Level" + (j + 1)).ToString() + "/1";
+                    collectableText.text = PlayerPrefs.GetInt("Level " + ((i * 10) + (j + 1))) + "/1";
                 }
 
                 if ((i * 10) + (j + 1) > PlayerPrefs.GetInt("LevelsUnlocked"))

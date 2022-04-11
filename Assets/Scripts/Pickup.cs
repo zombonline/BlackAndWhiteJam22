@@ -26,12 +26,13 @@ public class Pickup : MonoBehaviour
         //declare the playerpref if it does not already exist
         if (type == PICKUP_TYPE.FOV_UP)
         {
-            if(!PlayerPrefs.HasKey("Level" + SceneManager.GetActiveScene().buildIndex.ToString()))
+            Debug.Log(SceneManager.GetActiveScene().name);
+            if(!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name))
             {
-                PlayerPrefs.SetInt("Level" + SceneManager.GetActiveScene().buildIndex.ToString(), 0);
+                PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 0);
             }
             //get rid of pickup if playerpref exists and pickup has been collected.
-            else if(PlayerPrefs.GetInt("Level" + SceneManager.GetActiveScene().buildIndex.ToString()) > 0)
+            else if(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name) > 0)
             {
                 GetComponent<EraseTile>().Erase();
             }
@@ -45,7 +46,7 @@ public class Pickup : MonoBehaviour
         {
             sound.PlayCollectableSound();
             GameObject.Find("Game Canvas").GetComponent<TextBox>().ShowText(textFile);
-            PlayerPrefs.SetInt("Level" + SceneManager.GetActiveScene().buildIndex.ToString(), 1);
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
             fov.UpdateFOVUpgrades(true);
 
         }
