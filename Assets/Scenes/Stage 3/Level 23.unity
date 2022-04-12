@@ -1443,15 +1443,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1812200260, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1887760092, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2138527527, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2138527529, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_text
