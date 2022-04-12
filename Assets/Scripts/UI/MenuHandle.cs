@@ -36,7 +36,7 @@ public class MenuHandle : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("Introduction");
     }
 
     public void Options()

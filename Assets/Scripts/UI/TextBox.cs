@@ -8,14 +8,24 @@ public class TextBox : MonoBehaviour
 {
     [SerializeField] Image textBox;
     [SerializeField] TextMeshProUGUI textComponent;
+    [SerializeField] TextAsset sceneText;
     private PlayerMovement playerMovement;
     private AudioSource audioSource;
     private bool typing, boxOpen, skipText;
 
     private void Start()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        audioSource = GetComponent<AudioSource>();
+
+        if (sceneText != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            ShowText(sceneText);
+        }
+        else
+        {
+            playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     private void Update()
@@ -35,7 +45,10 @@ public class TextBox : MonoBehaviour
 
     public void ShowText(TextAsset textFile)
     {
-        playerMovement.SetInputPermission(false);
+        if (playerMovement != null)
+        {
+            playerMovement.SetInputPermission(false);
+        }
         Time.timeScale = 0;
         boxOpen = true;
         textBox.gameObject.SetActive(true);
@@ -70,6 +83,9 @@ public class TextBox : MonoBehaviour
         textComponent.text = null;
         boxOpen = false;
         Time.timeScale = 1;
-        playerMovement.SetInputPermission(true);
+        if (playerMovement != null)
+        {
+            playerMovement.SetInputPermission(true);
+        }
     }
 }

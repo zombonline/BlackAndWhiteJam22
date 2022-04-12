@@ -10,4 +10,9 @@ public class EndGameHandle : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void BeginFromStart()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

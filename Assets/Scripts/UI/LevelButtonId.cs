@@ -30,12 +30,21 @@ public class LevelButtonId : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+
     public void SetID(LevelID newID)
     {
         
         levelId = newID;
- 
-        text.text = levelId.stage + "-" + (levelId.level);
+
+        if (newID.stage < 4)
+        {
+            text.text = levelId.stage + "-" + (levelId.level);
+        }
+        else
+        {
+            text.text = "Final";
+        }
+        
     }
 
     

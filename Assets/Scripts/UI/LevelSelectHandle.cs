@@ -40,7 +40,6 @@ public class LevelSelectHandle : MonoBehaviour
                 currButton.GetComponent<LevelButtonId>().SetID(new LevelButtonId.LevelID(i + 1, j + 1));
 
                 //check if is unlocked
-                Debug.Log("Level " + ((i * 10) + (j + 1)));
                 if (PlayerPrefs.HasKey("Level " + ((i * 10) + (j + 1))))
                 {
                     var collectableText = currButton.transform.Find("Collectable").GetComponent<TextMeshProUGUI>();

@@ -108,6 +108,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelectScene.unity
     guid: e771f198896f1374393f4073df72bb83
   - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: 0bb745482770c194791a296194944a9b
+  - enabled: 1
     path: Assets/Scenes/TrueEnding.unity
     guid: fcaf47a5ea28e3149bffdb832c608429
   m_configObjects: {}
