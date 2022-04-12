@@ -6,10 +6,10 @@ public class AnswerBoxTrigger : MonoBehaviour
 {
     [SerializeField]
     private GameObject answerInputUI;
-
+    [SerializeField]
+    private EndLevelHandle endLevelHandle;
     private int[] correctAnswer = { 9, 2, 4, 9 };
     private PlayerMovement playerMovement;
-    public bool trueEndingUnlocked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +48,13 @@ public class AnswerBoxTrigger : MonoBehaviour
             }
         }
 
-        trueEndingUnlocked = isCorrect;
-
         //no longer allow input
         CloseAnswerBox();
-        GameObject.FindGameObjectWithTag("LevelComplete").GetComponent<EndLevelHandle>().TrueEndingUnlocked();
-        this.gameObject.SetActive(false);
+        if (isCorrect)
+        {
+            endLevelHandle.TrueEndingUnlocked();
+        }
+        
+        Destroy(this.gameObject);
     }
 }

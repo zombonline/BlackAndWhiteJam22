@@ -184,6 +184,8 @@ MonoBehaviour:
   buttonSound: {fileID: 8300000, guid: 7ff5edb919845e146bf6939f895e2989, type: 3}
   visionUpSound: {fileID: 8300000, guid: afc446ede956b42478a1b2c9518b1568, type: 3}
   collectableSound: {fileID: 8300000, guid: 38ce23fbc48a525429ab9919759cd15f, type: 3}
+  freezeSound: {fileID: 8300000, guid: 7d031ede79fc34746b96d195b4fb31ec, type: 3}
+  unfreezeSound: {fileID: 8300000, guid: a79902555c38640469928730486258f7, type: 3}
   stepSounds:
   - {fileID: 8300000, guid: 86dfb8565f91335409e20a482a225c74, type: 3}
   - {fileID: 8300000, guid: 7946a97bc1a801643945740ecf791a44, type: 3}

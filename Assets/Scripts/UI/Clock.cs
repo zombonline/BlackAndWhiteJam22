@@ -19,7 +19,7 @@ public class Clock : MonoBehaviour
     private bool isWarning = false;
 
     private AudioSource audioSource;
-    [SerializeField] AudioClip normalTicking, fastTicking;
+    [SerializeField] AudioClip normalTicking, fastTicking, warningSound;
 
     private PlayerMovement playerMove;
     private void Awake()
@@ -43,9 +43,6 @@ public class Clock : MonoBehaviour
         {
             audioSource.Play();
         }
-        /*unlockedTimeImage.fillAmount = unlockedTime / maxTime;
-
-        clockArmImage.rectTransform.eulerAngles = new Vector3(0, 0, -((timeRemaining / maxTime) * 360));*/
 
         if (timeRemaining <= 0)
         {
@@ -85,7 +82,14 @@ public class Clock : MonoBehaviour
     {
         if (tog)
         {
+            if (audioSource.clip != fastTicking)
+            {
+                audioSource.PlayOneShot(warningSound);
+                audioSource.clip = fastTicking;
+                audioSource.Play();
+            }
             audioSource.clip = fastTicking;
+            
             warningImage.color = new Color(1, 1, 1, 1);
         }
         else

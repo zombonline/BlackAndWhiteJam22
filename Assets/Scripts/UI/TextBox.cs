@@ -9,7 +9,6 @@ public class TextBox : MonoBehaviour
     [SerializeField] Image textBox;
     [SerializeField] TextMeshProUGUI textComponent;
     private PlayerMovement playerMovement;
-
     private AudioSource audioSource;
     private bool typing, boxOpen, skipText;
 

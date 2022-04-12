@@ -884,7 +884,7 @@ Tilemap:
     m_Data: {fileID: 1732501242396596947, guid: e369ce44ce8ab734ca21d25f60c2f06c,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 2137516850520035780, guid: dea0d7ad27fadfa4bada19534019536d,
+    m_Data: {fileID: 8737723855140250355, guid: 0c4a986d332ffa741bca6fd5f10d03ac,
       type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 6212316926236939558, guid: e369ce44ce8ab734ca21d25f60c2f06c,
@@ -1054,6 +1054,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1812200260, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887760092, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138527527, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 91512829478678093, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
+        type: 3}
+      propertyPath: stageMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: a2bf70b24f93b694bbce7706b283eeb4, type: 3}
     - target: {fileID: 91512829478678093, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
         type: 3}
       propertyPath: audioSources
@@ -5369,7 +5386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answerInputUI: {fileID: 769546780}
-  trueEndingUnlocked: 0
+  endLevelHandle: {fileID: 767878133}
 --- !u!1 &643420253
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,6 +5563,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &767878133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2970594375176062179, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
+    type: 3}
+  m_PrefabInstance: {fileID: 193776387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c595e535d59c9b94cb457f39701c958a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &769546780
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,7 +5617,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1900, y: 1000}
+  m_SizeDelta: {x: 1212, y: 621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769546782
 MonoBehaviour:

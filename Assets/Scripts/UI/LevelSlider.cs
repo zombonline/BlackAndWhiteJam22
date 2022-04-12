@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LevelSlider : MonoBehaviour
 {
-    private float pageDistance = 1000;
-    private float minXValue = -2000;
+    private float pageDistance = 4000;
+    private float minXValue = -8000;
     private float maxXValue = 0;
 
     public Button leftButton, rightButton;

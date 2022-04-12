@@ -97,10 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d3449d08948e5418ee66a6a3d4e5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 4900000, guid: eae7cca8fe003f74b9e07eb37df5bdad, type: 3}
   type: 1
   increaseTimeAmount: 0
-  collectableID: 6
+  collectableText: {fileID: 4900000, guid: 988016de83099a843859aacb7d60ed0f, type: 3}
 --- !u!61 &1609845737687007511
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class PlayerSound : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField]
-    private AudioClip defeatSound, buttonSound, visionUpSound, collectableSound;
+    private AudioClip defeatSound, buttonSound, visionUpSound, collectableSound, freezeSound, unfreezeSound;
 
     [SerializeField]
     private AudioClip[] stepSounds, clockSounds, doorSounds;
@@ -62,6 +62,18 @@ public class PlayerSound : MonoBehaviour
     public void PlayCollectableSound()
     {
         audioSource.PlayOneShot(collectableSound);
+    }
+
+    public void PlayMovementDebuff(bool applied)
+    {
+        if (applied)
+        {
+            audioSource.PlayOneShot(freezeSound);
+        }
+        else
+        {
+            audioSource.PlayOneShot(unfreezeSound);
+        }
     }
 
     public void PlayVisionUpSound()

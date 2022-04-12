@@ -251,6 +251,7 @@ MonoBehaviour:
   warningImage: {fileID: 0}
   normalTicking: {fileID: 8300000, guid: 7ea09a7dca83eb747bb738b5f8345a52, type: 3}
   fastTicking: {fileID: 8300000, guid: 454c7a9f7ff0c864fb829ce79605b94c, type: 3}
+  warningSound: {fileID: 8300000, guid: b0842406d902d564685c9381bd6d44b2, type: 3}
 --- !u!82 &5819072978217444286
 AudioSource:
   m_ObjectHideFlags: 0

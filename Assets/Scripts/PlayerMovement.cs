@@ -165,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
     public void MovementDebuff(bool applied)
     {
         movementDebuff = applied;
+        GetComponent<PlayerSound>().PlayMovementDebuff(applied);
     }
 
     private void Restart()

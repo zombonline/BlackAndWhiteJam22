@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,14 +10,14 @@ public class Pickup : MonoBehaviour
 {
     private enum PICKUP_TYPE { TIME_UP, FOV_UP }
 
-    [SerializeField] TextAsset textFile;
+    //[SerializeField] TextAsset textFile;
     [SerializeField] PICKUP_TYPE type;
     [SerializeField] float increaseTimeAmount;
 
-    [SerializeField] private int collectableID = 0;
-
     private PlayerSound sound;
     private PlayerFOV fov;
+    [SerializeField]
+    private TextAsset collectableText;
 
     private void Start()
     {
@@ -45,7 +46,7 @@ public class Pickup : MonoBehaviour
         if(type == PICKUP_TYPE.FOV_UP)
         {
             sound.PlayCollectableSound();
-            GameObject.Find("Game Canvas").GetComponent<TextBox>().ShowText(textFile);
+            GameObject.Find("Game Canvas").GetComponent<TextBox>().ShowText(collectableText);
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
             fov.UpdateFOVUpgrades(true);
 
