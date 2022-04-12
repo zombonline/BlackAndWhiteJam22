@@ -63,22 +63,27 @@ public class TextBox : MonoBehaviour
 
     IEnumerator TypeWriterText(TextAsset textFile)
     {
-        typing = true;
-        audioSource.Play();
-        for (int i = 0; i <= textFile.text.Length; i++)
+        if (!typing)
         {
-            yield return new WaitForSecondsRealtime(0.01f);
-            textComponent.text = textFile.text.Substring(0, i);
-
-            if (skipText)
+            typing = true;
+            audioSource.Play();
+            for (int i = 0; i <= textFile.text.Length; i++)
             {
-                textComponent.text = textFile.text;
-                break;
+                yield return new WaitForSecondsRealtime(0.01f);
+                textComponent.text = textFile.text.Substring(0, i);
+
+                if (skipText)
+                {
+                    textComponent.text = textFile.text;
+                    break;
+                }
             }
+            audioSource.Stop();
+            typing = false;
+            skipText = false;
         }
-        audioSource.Stop();
-        typing = false;
-        skipText = false;
+
+
     }
 
     public void OkButton()
