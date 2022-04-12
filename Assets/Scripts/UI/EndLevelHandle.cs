@@ -16,7 +16,15 @@ public class EndLevelHandle : MonoBehaviour
     void Start()
     {
         currLevel = SceneManager.GetActiveScene().buildIndex;
-        text.text = "Level - " + currLevel + "\nCompleted";
+        if (currLevel <= 30)
+        {
+            text.text = "Level - " + currLevel + "\nCompleted";
+        }
+        else
+        {
+            text.text = "CYCLE COMPLETED";
+        }
+        
     }
 
     public void NextLevel()

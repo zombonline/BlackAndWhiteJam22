@@ -80,7 +80,7 @@ public class LevelSelectHandle : MonoBehaviour
             PlayerPrefs.SetInt("Level 5", 0);
         }
 
-        if (!PlayerPrefs.HasKey("Level 7"))
+        if (!PlayerPrefs.HasKey("Level 6"))
         {
             PlayerPrefs.SetInt("Level 6", 0);
         }

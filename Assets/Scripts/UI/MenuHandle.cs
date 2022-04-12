@@ -8,14 +8,15 @@ using UnityEngine.UI;
 public class MenuHandle : MonoBehaviour
 {
     [SerializeField]
-    private GameObject menu, options;
+    private GameObject menu, options, credits;
     [SerializeField]
     private Slider master, music, effects;
     [SerializeField]
     private Button keyboardButton, mouseButton;
     [SerializeField]
     private AudioMixer mixer;
-
+    [SerializeField]
+    private Sprite lockedSprite, buttonSprite;
     public const string KEYBOARD_CONTROLS = "Keyboard";
     public const string KEYBOARD_AND_MOUSE_CONTROLS = "KeyboardAndMouse";
 
@@ -43,12 +44,28 @@ public class MenuHandle : MonoBehaviour
     {
         menu.SetActive(false);
         options.SetActive(true);
+        if(credits != null)
+        {
+            credits.SetActive(false);
+        }
+        
+    }
+
+    public void Credits()
+    {
+        menu.SetActive(false);
+        options.SetActive(false);
+        credits.SetActive(true);
     }
 
     public void Menu()
     {
         menu.SetActive(true);
         options.SetActive(false);
+        if (credits != null)
+        {
+            credits.SetActive(false);
+        }
     }
 
     public void QuitGame()
@@ -97,15 +114,19 @@ public class MenuHandle : MonoBehaviour
     public void SetControlsToKeyboard()
     {
         PlayerPrefs.SetString("Controls", KEYBOARD_CONTROLS);
-        mouseButton.interactable = true;
         keyboardButton.interactable = false;
+        keyboardButton.image.sprite = lockedSprite;
+        mouseButton.interactable = true;
+        mouseButton.image.sprite = buttonSprite;
     }
 
     public void SetControlsToKeyboardAndMouse()
     {
         PlayerPrefs.SetString("Controls", KEYBOARD_AND_MOUSE_CONTROLS);
         mouseButton.interactable = false;
+        mouseButton.image.sprite = lockedSprite;
         keyboardButton.interactable = true;
+        keyboardButton.image.sprite = buttonSprite;
     }
 
     public void OpenPauseMenu()
@@ -147,7 +168,7 @@ public class MenuHandle : MonoBehaviour
     private void SetupOptions()
     {
         //check player prefs set
-        if (PlayerPrefs.GetFloat("MasterVolume").Equals(0) || PlayerPrefs.GetFloat("MusicVolume").Equals(0) || PlayerPrefs.GetFloat("EffectsVolume").Equals(0))
+        if (!PlayerPrefs.HasKey("MasterVolume") || !PlayerPrefs.HasKey("MusicVolume") || !PlayerPrefs.HasKey("EffectsVolume"))
         {
             PlayerPrefs.SetFloat("MasterVolume", 1);
             PlayerPrefs.SetFloat("MusicVolume", 1);
@@ -166,12 +187,16 @@ public class MenuHandle : MonoBehaviour
         if (PlayerPrefs.GetString("Controls").Equals(KEYBOARD_CONTROLS))
         {
             keyboardButton.interactable = false;
+            keyboardButton.image.sprite = lockedSprite;
             mouseButton.interactable = true;
+            mouseButton.image.sprite = buttonSprite;
         }
         else
         {
             mouseButton.interactable = false;
+            mouseButton.image.sprite = lockedSprite;
             keyboardButton.interactable = true;
+            keyboardButton.image.sprite = buttonSprite;
         }
 
         //setting levels unlocked

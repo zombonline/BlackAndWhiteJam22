@@ -27,7 +27,6 @@ public class Pickup : MonoBehaviour
         //declare the playerpref if it does not already exist
         if (type == PICKUP_TYPE.FOV_UP)
         {
-            Debug.Log(SceneManager.GetActiveScene().name);
             if(!PlayerPrefs.HasKey(SceneManager.GetActiveScene().name))
             {
                 PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 0);

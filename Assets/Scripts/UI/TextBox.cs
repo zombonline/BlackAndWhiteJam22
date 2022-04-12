@@ -12,14 +12,16 @@ public class TextBox : MonoBehaviour
     private PlayerMovement playerMovement;
     private AudioSource audioSource;
     private bool typing, boxOpen, skipText;
-
+    [SerializeField] bool isInGame;
     private void Start()
     {
-
-        if (sceneText != null)
+        if (!isInGame)
         {
             audioSource = GetComponent<AudioSource>();
-            ShowText(sceneText);
+            if (sceneText != null)
+            {
+                ShowText(sceneText);
+            }
         }
         else
         {
@@ -38,6 +40,10 @@ public class TextBox : MonoBehaviour
             }
             else
             {
+                if (sceneText != null)
+                {
+                    GameObject.Find("Canvas").GetComponent<EndGameHandle>().BeginFromStart();
+                }
                 OkButton();
             }
         }
@@ -78,7 +84,16 @@ public class TextBox : MonoBehaviour
     public void OkButton()
     {
         audioSource.Stop();
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSound>().PlayVisionUpSound();
+        if (typing)
+        {
+            skipText = true;
+        }
+        
+        if (isInGame)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSound>().PlayVisionUpSound();
+        }
+        
         textBox.gameObject.SetActive(false);
         textComponent.text = null;
         boxOpen = false;

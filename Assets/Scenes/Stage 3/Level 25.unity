@@ -734,6 +734,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1887760094, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
+      propertyPath: m_text
+      value: 'Press the r key
+
+        to restart'
+      objectReference: {fileID: 0}
     - target: {fileID: 2138527527, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
       value: 2
