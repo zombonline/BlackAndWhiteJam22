@@ -719,15 +719,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1812200260, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1887760092, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2138527527, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2138527529, guid: d08fb87aaa0d0f146aff38b5c0a0129c, type: 3}
       propertyPath: m_text
@@ -735,6 +735,11 @@ PrefabInstance:
 
         LEVEL: Decisions'
       objectReference: {fileID: 0}
+    - target: {fileID: 91512829478678093, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
+        type: 3}
+      propertyPath: stageMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1430689e157dfc745af68a4612adfa47, type: 3}
     - target: {fileID: 2970594373569692370, guid: d08fb87aaa0d0f146aff38b5c0a0129c,
         type: 3}
       propertyPath: m_AnchorMax.x
