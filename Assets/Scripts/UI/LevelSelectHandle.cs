@@ -10,7 +10,7 @@ public class LevelSelectHandle : MonoBehaviour
     [SerializeField]
     private Button levelButton;
     [SerializeField]
-    private Sprite lockedSprite;
+    private Sprite lockedSprite, checkBoxChecked, checkBoxUnchecked;
 
     [SerializeField]
     private int[] levelsInStages = new int[5];
@@ -39,14 +39,22 @@ public class LevelSelectHandle : MonoBehaviour
                 currButton.transform.localScale = new Vector3(1, 1, 1);
                 currButton.GetComponent<LevelButtonId>().SetID(new LevelButtonId.LevelID(i + 1, j + 1));
 
-                //check if is unlocked
+                //check for collectable
                 if (PlayerPrefs.HasKey("Level " + ((i * 10) + (j + 1))))
                 {
-                    var collectableText = currButton.transform.Find("Collectable").GetComponent<TextMeshProUGUI>();
-                    collectableText.enabled = true;
-                    collectableText.text = PlayerPrefs.GetInt("Level " + ((i * 10) + (j + 1))) + "/1";
-                }
+                    var collectableImage = currButton.transform.Find("Collectable").GetComponent<Image>();
+                    collectableImage.enabled = true;
+                    if(PlayerPrefs.GetInt("Level " + ((i * 10) + (j + 1))) > 0)
+                    {
+                        collectableImage.sprite = checkBoxChecked;
+                    }
+                    else
+                    {
+                        collectableImage.sprite = checkBoxUnchecked;
+                    }
 
+                }
+                //check if is unlocked
                 if ((i * 10) + (j + 1) > PlayerPrefs.GetInt("LevelsUnlocked"))
                 {
                     currButton.GetComponent<Image>().sprite = lockedSprite;
@@ -61,6 +69,96 @@ public class LevelSelectHandle : MonoBehaviour
     {
         PlayerPrefs.SetInt("LevelsUnlocked", 100);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //hard coded creation of playerprefs for collectables
+        if(!PlayerPrefs.HasKey("Level 3"))
+        {
+            PlayerPrefs.SetInt("Level 3", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 5"))
+        {
+            PlayerPrefs.SetInt("Level 5", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 7"))
+        {
+            PlayerPrefs.SetInt("Level 6", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 7"))
+        {
+            PlayerPrefs.SetInt("Level 7", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 8"))
+        {
+            PlayerPrefs.SetInt("Level 8", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 9"))
+        {
+            PlayerPrefs.SetInt("Level 9", 0);
+        }
+        //world 2
+        if (!PlayerPrefs.HasKey("Level 12"))
+        {
+            PlayerPrefs.SetInt("Level 12", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 13"))
+        {
+            PlayerPrefs.SetInt("Level 13", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 14"))
+        {
+            PlayerPrefs.SetInt("Level 14", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 17"))
+        {
+            PlayerPrefs.SetInt("Level 17", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 18"))
+        {
+            PlayerPrefs.SetInt("Level 18", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 19"))
+        {
+            PlayerPrefs.SetInt("Level 19", 0);
+        }
+        //world 3
+        if (!PlayerPrefs.HasKey("Level 22"))
+        {
+            PlayerPrefs.SetInt("Level 22", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 23"))
+        {
+            PlayerPrefs.SetInt("Level 23", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 24"))
+        {
+            PlayerPrefs.SetInt("Level 24", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 26"))
+        {
+            PlayerPrefs.SetInt("Level 26", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 27"))
+        {
+            PlayerPrefs.SetInt("Level 27", 0);
+        }
+
+        if (!PlayerPrefs.HasKey("Level 29"))
+        {
+            PlayerPrefs.SetInt("Level 29", 0);
+        }
     }
 
     public void ReturnToMenu()
