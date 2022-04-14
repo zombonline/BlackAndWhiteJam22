@@ -215,7 +215,7 @@ public class PlayerFOV : MonoBehaviour
         int upgradeCount = 0;
         for (int i = 1; i < SceneManager.GetActiveScene().buildIndex + 1; i++)
         {
-            if (PlayerPrefs.HasKey("Level" + i))
+            if (PlayerPrefs.GetInt("Level " + i) == 1)
             {
                 if (i < SceneManager.GetActiveScene().buildIndex || justPickedUp)
                 {

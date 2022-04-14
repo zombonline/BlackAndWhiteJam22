@@ -27,6 +27,15 @@ public class EndLevelHandle : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (this.gameObject.activeInHierarchy && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            NextLevel();
+        }
+    }
+
+
     public void NextLevel()
     {
         if (trueEnding)
